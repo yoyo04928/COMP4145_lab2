@@ -82,7 +82,7 @@ with chart_tab:
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
         height=700,
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
 
 with stats_tab:
     st.subheader("Overall Trade Statistics")
@@ -119,7 +119,7 @@ with trades_tab:
         display_df["SellPrice"] = display_df["SellPrice"].round(2)
         display_df["ProfitPct"] = display_df["ProfitPct"].round(2)
 
-        st.dataframe(display_df, use_container_width=True)
+        st.dataframe(display_df, width="stretch")
 
         csv = display_df.to_csv(index=False).encode("utf-8")
         st.download_button(
